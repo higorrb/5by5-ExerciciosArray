@@ -1,4 +1,4 @@
-﻿int tamanho = 3;
+﻿int tamanho = 10;
 
 string[] vetorChar = new string[tamanho];
 string[] vetorASCII = new string[tamanho * 2];
