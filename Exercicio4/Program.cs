@@ -1,21 +1,28 @@
-﻿string[] vetorChar = new string[10];
-string[] vetorASCII = new string[20];
+﻿int tamanho = 3;
 
-void AdicionaChar()
+string[] vetorChar = new string[tamanho];
+string[] vetorASCII = new string[tamanho * 2];
+
+void AdicionarChar(string[] vetor)
 {
-    for (int i = 0; i < vetorChar.Length; i++)
+    for (int i = 0; i < vetor.Length; i++)
     {
         Console.Write("Digite um caracter: ");
-        vetorChar[i] = Console.ReadLine();
+        vetor[i] = Console.ReadLine();
     }
 }
 
-void TransformaAscii()
+int TransformarASCII(string letra)
 {
-    for (int i = 0; i < vetorChar.Length; i++)
+    return ((int)char.Parse(letra));
+}
+
+void CriarVetorASCII()
+{
+    for(int i = 0;i < vetorChar.Length; i++)
     {
         vetorASCII[i*2] = vetorChar[i];
-        vetorASCII[i*2 + 1] = ((int)char.Parse(vetorChar[i])).ToString();
+        vetorASCII[i * 2 + 1] = TransformarASCII(vetorChar[i]).ToString();
     }
 }
 
@@ -25,12 +32,13 @@ void MostraVetor(string[] vetor)
     {
         Console.Write($"[{vetor[i]}] ");
     }
+    Console.WriteLine("");
 }
 
-AdicionaChar();
-TransformaAscii();
+AdicionarChar(vetorChar);
 Console.Write("Vetor Original -> ");
 MostraVetor(vetorChar);
-Console.WriteLine(" ");
+
+CriarVetorASCII();
 Console.Write("Vetor com ASCII -> ");
 MostraVetor(vetorASCII);
