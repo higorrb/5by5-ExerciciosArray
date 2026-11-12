@@ -1,0 +1,11 @@
+1- faça um programa que leia até 6 caracteres e grave em um vetor na ordem inserida, imprima o vetor da 1 a ultima posição
+e da ultima a 1 posição
+
+2-faça um programa que leia 5 numeros inteiros e grave em 1 vetor, este vetor deve ser COPIADO para um novo da sequencia inversa
+faça o mesmo, copiando para um novo vetor de numeros pares e outro de numeros impares, mostrar o 4 vetores
+
+3-faça um programa que leia m numero inteiro, usando esse numero, crie um vetor com essa quantidade de posições, dentro desse vetor
+deve conter os itens da sequencia fibonacci ate o numero.
+
+4-faça um programa que crie um vetor de string de 10 posicoes, copie para um novo vetor, cada uma das posições, adicionando na proxima
+o valor da tabela ascii de cada caracter
