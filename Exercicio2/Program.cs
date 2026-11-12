@@ -9,7 +9,7 @@ void AdicionaNum()
 {
     do
     {
-        Console.Write("Digite um numero: ");
+        Console.Write("Digite um numero para o vetor: ");
         vetorNum[contador] = int.Parse(Console.ReadLine());
 
         contador++;
@@ -69,30 +69,42 @@ void MostraVetor(int[] vetor)
         Console.Write($"[{vetor[i]}] ");
     }
 }
+
 AdicionaNum();
-Console.Write("Digite uma opcao para copiar o vetor[inverso/par/impar]: ");
-opcao = Console.ReadLine();
-Console.Write("Original: ");
-MostraVetor(vetorNum);
-Console.WriteLine(" ");
-switch (opcao) 
+
+do
 {
-    case "inverso":
-        vetorNumInverso = CopiaVetor(opcao,vetorNum);
-        Console.Write("Inverso: ");
-        MostraVetor(vetorNumInverso);
-        break;
-    case "par":
-        vetorNumPar = CopiaVetor(opcao, vetorNum);
-        Console.Write("Par: ");
-        MostraVetor(vetorNumPar);
-        break;
-    case "impar":
-        vetorNumImpar = CopiaVetor(opcao, vetorNum);
-        Console.Write("Impar: ");
-        MostraVetor(vetorNumImpar);
-        break;
-    case null:
-        Console.WriteLine("vetor invalido");
-        break;
-}
+    Console.WriteLine("\n\n[inverso] - inverte o vetor \n[par] - mostra apenas os pares \n[impar] - mostra apenas os impares \n[nada]-mostra apenas o vetor original");
+    Console.Write("Digite uma opcao para copiar o vetor: ");
+    opcao = Console.ReadLine();
+
+    Console.Write("\nOriginal: ");
+    MostraVetor(vetorNum);
+    Console.WriteLine(" ");
+
+    switch (opcao)
+    {
+        case "inverso":
+            vetorNumInverso = CopiaVetor(opcao, vetorNum);
+            Console.Write("Inverso: ");
+            MostraVetor(vetorNumInverso);
+            break;
+        case "par":
+            vetorNumPar = CopiaVetor(opcao, vetorNum);
+            Console.Write("Par: ");
+            MostraVetor(vetorNumPar);
+            break;
+        case "impar":
+            vetorNumImpar = CopiaVetor(opcao, vetorNum);
+            Console.Write("Impar: ");
+            MostraVetor(vetorNumImpar);
+            break;
+
+        case "nada":
+            break;
+
+        case null:
+            Console.WriteLine("vetor invalido");
+            break;
+    }
+} while (opcao != "nada");
